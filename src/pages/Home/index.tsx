@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import Clock from '../../components/Clock';
 
 export default function HomePage() {
 
@@ -6,7 +7,9 @@ export default function HomePage() {
 
     return (
         <section>
-
+            <header>
+                <Clock/>
+            </header>
             <div>
                 <p>Our mission is</p>
                 <p>Nossa missão é</p>
@@ -19,7 +22,7 @@ export default function HomePage() {
             </div>
             <footer>
                 <p>Essa janela do navegador é usada para manter sua sessão de autenticação ativa. Deixe-a aberta em segundo plano e abra uma nova janela para continuar a navegar.</p>
-                <p>Application refresh in</p>
+                <p>Application refresh in </p>
                 <button type="button" onClick={() => navigate("/")}>Logout</button>
             </footer>
         </section>

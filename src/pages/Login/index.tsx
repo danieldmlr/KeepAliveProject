@@ -14,8 +14,8 @@ export default function LoginScreen() {
 
             <form>
                 <label>Login</label>
-                <input type="text" placeholder="Usuário"></input>
-                <input type="text" placeholder="Senha"></input>
+                <input type="text" name="usuario" placeholder="Usuário" required></input>
+                <input type="password" name="password" placeholder="Senha" required></input>
             </form>
 
             <button type="submit" onClick={() =>  navigate("/home")}>Continuar</button>
