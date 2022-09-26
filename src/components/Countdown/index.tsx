@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
 
 interface Props {
-    max: number
+    max: number;
 }
 
 export default function Countdown({ max }: Props) {
@@ -17,5 +17,5 @@ export default function Countdown({ max }: Props) {
         <span>
             {counter}
         </span>
-    )
+    );
 }

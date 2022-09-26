@@ -1,31 +1,40 @@
 import { useNavigate } from 'react-router-dom';
 import Clock from '../../components/Clock';
 import Countdown from '../../components/Countdown';
+import { HomeSection, MissionDescription, MissionSubText, MissionText, MissionTextSm } from './styles';
 
 export default function HomePage() {
 
     const navigate = useNavigate();
 
     return (
-        <section>
+        <HomeSection>
             <header>
-                <Clock/>
+                <p><Clock /></p>
             </header>
-            <div>
-                <p>Our mission is</p>
-                <p>Nossa missão é</p>
-                <p>to transform the world</p>
-                <p>transformar o mundo</p>
-                <p>building digital experiences</p>
-                <p>construindo experiências digitais</p>
-                <p>that enable our client’s growth</p>
-                <p>que permitam o crescimento dos nossos clientes</p>
-            </div>
+            <MissionDescription>
+                <MissionTextSm>Our mission is</MissionTextSm>
+                <MissionSubText>Nossa missão é</MissionSubText>
+                <MissionText>to transform the world</MissionText>
+                <MissionSubText>transformar o mundo</MissionSubText>
+                <MissionText>building digital experiences</MissionText>
+                <MissionSubText>construindo experiências digitais</MissionSubText>
+                <MissionText>that enable our client’s growth</MissionText>
+                <MissionSubText>que permitam o crescimento dos nossos clientes</MissionSubText>
+            </MissionDescription>
             <footer>
                 <p>Essa janela do navegador é usada para manter sua sessão de autenticação ativa. Deixe-a aberta em segundo plano e abra uma nova janela para continuar a navegar.</p>
-                <p>Application refresh in <Countdown max={10}/></p>
-                <button type="button" onClick={() => navigate("/")}>Logout</button>
+                <div>
+                    <p>Application refresh in</p>
+                <div>
+                    <p><Countdown max={1000} /></p>
+                    <p>seconds</p>
+                </div>
+                </div>
+                <div>
+                    <button type="button" onClick={() => navigate("/")}>Logout</button>
+                </div>
             </footer>
-        </section>
+        </HomeSection>
     )
 }
