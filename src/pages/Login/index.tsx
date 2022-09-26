@@ -20,9 +20,9 @@ export default function LoginScreen() {
                             </LabelDiv>
                             <DivUser>
                                 <InputUser type="text" name="usuario" placeholder="Usuário" required></InputUser>
-                                <div>
+                                <DivIcon>
                                     <AiOutlineUser size={20}/>
-                                </div>
+                                </DivIcon>
                             </DivUser>
                             <DivPassword>
                                 <InputPassword type="password" name="password" placeholder="Senha" required></InputPassword>
