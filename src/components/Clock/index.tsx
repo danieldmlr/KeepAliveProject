@@ -1,3 +1,5 @@
+import { Time, Day, ClockAlign } from "./styles";
+
 var hours, minutes
 
 const dayOfWeek = ["domingo", "segunda-feira", "terça-feira", "quarta-feira", "quinta-feira", "sexta-feira", "sábado"]
@@ -15,10 +17,10 @@ export default function Clock() {
 
     return (
 
-        <>
-            {currentDate}
-            {currentTime}
-        </>
+        <ClockAlign>
+            <Time>{currentTime}</Time>
+            <Day>{currentDate}</Day>
+        </ClockAlign>
 
     )
 }

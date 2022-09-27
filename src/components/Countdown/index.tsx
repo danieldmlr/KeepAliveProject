@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
+import { Timer } from "./styles";
 
 interface Props {
     max: number;
@@ -14,8 +15,8 @@ export default function Countdown({ max }: Props) {
     }, [counter]);
 
     return (
-        <span>
+        <Timer>
             {counter}
-        </span>
+        </Timer>
     );
 }

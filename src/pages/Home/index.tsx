@@ -1,17 +1,40 @@
 import { useNavigate } from 'react-router-dom';
 import Clock from '../../components/Clock';
 import Countdown from '../../components/Countdown';
-import { HomeSection, MissionDescription, MissionSubText, MissionText, MissionTextSm } from './styles';
-
+import { WiDayCloudyGusts } from "react-icons/wi";
+import {
+    ButtonContainer, City, FooterButtonContinue, FooterButtonLogout, FooterText, HomeFooter, HomeHeader, HomeSection, LogoContainer,
+    MissionDescription, MissionSubText, MissionText, MissionTextSm, Seconds, Temperature, TimerContainer,
+    TimerText, VBar, WeatherDisplay, WeatherDiv
+} from './styles';
+import logoHome from "../../assets/LogoCompasso-Home.png";
+import { useEffect, useState } from 'react';
+import { Tempo } from '../../components/Weather';
 export default function HomePage() {
 
     const navigate = useNavigate();
+    const [weather, setWeather] = useState({ city: '', country: '', temperature: 0 })
+    useEffect(() => {
+        Tempo().then((res) => {
+            setWeather({ city: res.name, country: res.sys.country, temperature: res.main.temp })
+        })
+    },[])
 
     return (
         <HomeSection>
-            <header>
-                <p><Clock /></p>
-            </header>
+            <HomeHeader>
+                <LogoContainer>
+                    <img src={logoHome} alt="Logo Home" />
+                </LogoContainer>
+                <Clock />
+                <WeatherDiv>
+                    <City>{weather.city} - {weather.country}</City>
+                    <WeatherDisplay>
+                        <WiDayCloudyGusts size={34} style={{ color: "#454545" }} />
+                        <Temperature>{weather.temperature.toFixed(0)}°</Temperature>
+                    </WeatherDisplay>
+                </WeatherDiv>
+            </HomeHeader>
             <MissionDescription>
                 <MissionTextSm>Our mission is</MissionTextSm>
                 <MissionSubText>Nossa missão é</MissionSubText>
@@ -22,19 +45,22 @@ export default function HomePage() {
                 <MissionText>that enable our client’s growth</MissionText>
                 <MissionSubText>que permitam o crescimento dos nossos clientes</MissionSubText>
             </MissionDescription>
-            <footer>
-                <p>Essa janela do navegador é usada para manter sua sessão de autenticação ativa. Deixe-a aberta em segundo plano e abra uma nova janela para continuar a navegar.</p>
-                <div>
-                    <p>Application refresh in</p>
-                <div>
-                    <p><Countdown max={1000} /></p>
-                    <p>seconds</p>
-                </div>
-                </div>
-                <div>
-                    <button type="button" onClick={() => navigate("/")}>Logout</button>
-                </div>
-            </footer>
+            <HomeFooter>
+                <FooterText>Essa janela do navegador é usada para manter sua sessão de autenticação ativa.
+                    Deixe-a aberta em segundo plano e abra uma nova janela para continuar a navegar.</FooterText>
+                <VBar></VBar>
+                <TimerContainer>
+                    <TimerText>Application refresh in</TimerText>
+                    <div>
+                        <Countdown max={60} />
+                        <Seconds>seconds</Seconds>
+                    </div>
+                </TimerContainer>
+                <ButtonContainer>
+                    <FooterButtonContinue type="button">Continuar Navegando</FooterButtonContinue>
+                    <FooterButtonLogout type="button" onClick={() => navigate("/")}>Logout</FooterButtonLogout>
+                </ButtonContainer>
+            </HomeFooter>
         </HomeSection>
     )
 }

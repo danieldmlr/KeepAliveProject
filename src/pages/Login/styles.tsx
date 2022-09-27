@@ -2,9 +2,13 @@ import styled from "styled-components";
 import { borderColor, buttonColor, textColor } from "../../components/UI/variables";
 import notebookImg from "../../assets/Notebook.png";
 
+interface ButtonProps {
+    focused: boolean
+}
+
 export const LoginSection = styled.section`
     background-color: #222222;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     margin: 0 auto;
     box-sizing: border-box;
@@ -18,7 +22,6 @@ export const TextDiv = styled.div`
 
 export const PaddingDiv = styled.div`
     padding: 20.53% 0 0 29.9%;
-
 `;
 
 export const Welcome = styled.h3`
@@ -53,10 +56,19 @@ export const InputUser = styled.input`
     border-radius: 50px;
     margin: 4.77% 2.98% 0 0;
     padding-left: 2.98%;
+    transition: 0.5s transform;
     &::placeholder { 
         color:${textColor}; 
         font-family: 'Mark Pro';
+        font-size: 1.125rem;
         };
+`;
+
+export const ContainerIconUser = styled.div<ButtonProps>`
+    margin-top: 55px;
+    transition: 0.3s transform;
+    ${(props) =>
+    props.focused ? "transform: translate(-325%)" : "transform: translate(0)"}
 `;
 
 export const DivPassword = styled.div`
@@ -75,17 +87,25 @@ export const InputPassword = styled.input`
     &::placeholder { 
         color:${textColor}; 
         font-family: 'Mark Pro';
+        font-size: 1.125rem;
     };
 
 `;
 
-export const DivIcon = styled.div`
-    margin-top: 50px;
+export const ContainerIconPassword = styled.div<ButtonProps>`
+    margin-top: 55px;
+    transition: 0.3s transform;
+    ${(props) =>
+    props.focused ? "transform: translate(-325%)" : "transform: translate(0)"}
 `;
 
 export const ButtonContinue = styled.button`
     width: 56.32%;
     height: 4.188rem;
+    font-family: 'Mark Pro';
+    font-size: 1.125rem;
+    font-weight: 700;
+    text-align: center;
     background: ${buttonColor};
     border-radius: 50px;
     border: none;
