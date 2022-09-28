@@ -13,6 +13,7 @@ export const Time = styled.p`
     color: ${missionSubTextColor};
     text-align: center;
     width: 327px;
+   
 `;
 
 export const Day = styled.p`
@@ -21,4 +22,5 @@ export const Day = styled.p`
     text-align: center;
     width: 264px;
     margin-top: -20px;
+    margin-left: 100px;
 `;

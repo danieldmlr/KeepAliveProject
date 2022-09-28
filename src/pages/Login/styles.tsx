@@ -31,7 +31,7 @@ export const Welcome = styled.h3`
 `;
 
 export const LoginGuideText = styled.p`
-    width: 44.73%;
+    width: 40%;
 `;
 
 export const LabelDiv = styled.div`  
@@ -65,7 +65,7 @@ export const InputUser = styled.input`
 `;
 
 export const ContainerIconUser = styled.div<ButtonProps>`
-    margin-top: 55px;
+    margin-top: 7.5%;
     transition: 0.3s transform;
     ${(props) =>
     props.focused ? "transform: translate(-325%)" : "transform: translate(0)"}
@@ -93,7 +93,7 @@ export const InputPassword = styled.input`
 `;
 
 export const ContainerIconPassword = styled.div<ButtonProps>`
-    margin-top: 55px;
+    margin-top: 7.5%;
     transition: 0.3s transform;
     ${(props) =>
     props.focused ? "transform: translate(-325%)" : "transform: translate(0)"}

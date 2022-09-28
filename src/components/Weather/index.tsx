@@ -7,7 +7,7 @@ const openWeather = new OpenWeatherMap({
 openWeather.setUnits('metric')
 openWeather.setLanguage('pt_br');
 
-export const Tempo = () => openWeather
+export const CurrentWeather = () => openWeather
 .getCurrentWeatherByCityName({
   cityName: 'Florianópolis'
 })

@@ -86,8 +86,13 @@ export const HomeFooter = styled.footer`
     height: 9.25vh;
 `;
 
+export const LeftContainerFooter = styled.div`
+    margin-right: 6.4vw;
+    display: flex;
+`;
+
 export const FooterText = styled.p`
-    width: 28.18%;
+    width: 24.18%;
     font-size: 0.75rem;
     padding: 0 1.83% 0 18.44%;
     text-align: end;
@@ -104,14 +109,15 @@ export const TimerContainer = styled.div`
     display: flex;
     align-items: center;
     padding-right: 19.4%;
+    width: 280px;
 `;
 
 export const TimerText = styled.p`
-    width: 49%;
+    width: 45%;
     font-size: 0.875rem;
     text-align: end;
-    padding-right: 33px;
-    
+    padding-right: 11.8%;
+    margin-left: 44%;
 `;
 
 export const Seconds = styled.p`

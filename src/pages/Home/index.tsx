@@ -3,22 +3,22 @@ import Clock from '../../components/Clock';
 import Countdown from '../../components/Countdown';
 import { WiDayCloudyGusts } from "react-icons/wi";
 import {
-    ButtonContainer, City, FooterButtonContinue, FooterButtonLogout, FooterText, HomeFooter, HomeHeader, HomeSection, LogoContainer,
+    ButtonContainer, City, FooterButtonContinue, FooterButtonLogout, FooterText, HomeFooter, HomeHeader, HomeSection, LeftContainerFooter, LogoContainer,
     MissionDescription, MissionSubText, MissionText, MissionTextSm, Seconds, Temperature, TimerContainer,
     TimerText, VBar, WeatherDisplay, WeatherDiv
 } from './styles';
 import logoHome from "../../assets/LogoCompasso-Home.png";
 import { useEffect, useState } from 'react';
-import { Tempo } from '../../components/Weather';
+import { CurrentWeather } from '../../components/Weather';
 export default function HomePage() {
 
     const navigate = useNavigate();
     const [weather, setWeather] = useState({ city: '', country: '', temperature: 0 })
     useEffect(() => {
-        Tempo().then((res) => {
+        CurrentWeather().then((res) => {
             setWeather({ city: res.name, country: res.sys.country, temperature: res.main.temp })
         })
-    },[])
+    }, [])
 
     return (
         <HomeSection>
@@ -46,9 +46,9 @@ export default function HomePage() {
                 <MissionSubText>que permitam o crescimento dos nossos clientes</MissionSubText>
             </MissionDescription>
             <HomeFooter>
-                <FooterText>Essa janela do navegador é usada para manter sua sessão de autenticação ativa.
-                    Deixe-a aberta em segundo plano e abra uma nova janela para continuar a navegar.</FooterText>
-                <VBar></VBar>
+                    <FooterText>Essa janela do navegador é usada para manter sua sessão de autenticação ativa.
+                        Deixe-a aberta em segundo plano e abra uma nova janela para continuar a navegar.</FooterText>
+                    <VBar></VBar>
                 <TimerContainer>
                     <TimerText>Application refresh in</TimerText>
                     <div>
@@ -57,7 +57,7 @@ export default function HomePage() {
                     </div>
                 </TimerContainer>
                 <ButtonContainer>
-                    <FooterButtonContinue type="button">Continuar Navegando</FooterButtonContinue>
+                    <FooterButtonContinue type="button" onClick={() => window.open("//www.google.com", '_blank')}>Continuar Navegando</FooterButtonContinue>
                     <FooterButtonLogout type="button" onClick={() => navigate("/")}>Logout</FooterButtonLogout>
                 </ButtonContainer>
             </HomeFooter>

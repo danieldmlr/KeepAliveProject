@@ -4,6 +4,7 @@ import { AiOutlineUser, AiOutlineLock } from "react-icons/ai";
 import { LoginSection, Welcome, LabelDiv, Label, LoginGuideText, TextDiv, ImageDiv, ButtonContinue, PaddingDiv, Logo, InputUser, InputPassword, DivPassword, DivUser, ContainerIconPassword, ContainerIconUser } from './styles';
 import logoCompass from "../../assets/Logo-Compasso-Branco.png";
 import ErrorMessage from '../../components/ValidationError';
+import { errorColor } from '../../components/UI/variables';
 
 export default function LoginScreen() {
 
@@ -16,7 +17,7 @@ export default function LoginScreen() {
     const [error, setError] = useState(false)
 
     const handleSubmit = () => {
-        if (user.length === 0 || password.length === 0) { setError(true) }
+        if (user.length === 0 || password.length < 3) { setError(true) }
         else { setError(false); navigate("/home") }
         
     }
@@ -36,7 +37,11 @@ export default function LoginScreen() {
                                 autoComplete='off'
                                 placeholder="Usuário"
                                 value={user}
-                                onChange={({ target }) => setUser(target.value)}
+                                style = {{borderColor: `${error? errorColor : "white"}`}}
+                                onChange={({ target }) => {
+                                    setUser(target.value)
+                                    setError(false)
+                                } }
                                 onFocus={() => setFocusedUser(true)}
                                 onBlur={(event) =>
                                     event.target.value.length > 0 ? setFocusedUser(true) : setFocusedUser(false)
@@ -53,7 +58,11 @@ export default function LoginScreen() {
                                 name="password"
                                 placeholder="Senha"
                                 value={password}
-                                onChange={({ target }) => setPassword(target.value)}
+                                style = {{borderColor: `${error? errorColor : "white"}`}}
+                                onChange={({ target }) => {
+                                    setPassword(target.value)
+                                    setError(false)
+                                } }
                                 onFocus={() => setFocusedPassword(true)}
                                 onBlur={(event) =>
                                     event.target.value.length > 0 ? setFocusedPassword(true) : setFocusedPassword(false)
