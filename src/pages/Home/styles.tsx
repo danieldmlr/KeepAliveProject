@@ -19,7 +19,7 @@ export const HomeHeader = styled.header`
     display: flex;
     justify-content: space-between;
     padding-top: 1.3%;
-    height: 12.95vh;
+    /* height: 12.95vh; */
 `;
 
 
@@ -57,7 +57,7 @@ export const MissionDescription = styled.div`
     align-items: flex-end;
     justify-content: center;
     padding-right: 7.03%;
-    height: 77.6vh;
+    /* height: 77.6vh; */
 `;
 
 export const MissionText = styled.h2`
@@ -83,11 +83,11 @@ export const HomeFooter = styled.footer`
     display: flex;
     justify-content: end;
     align-items: center;
-    height: 9.25vh;
+    /* height: 9.25vh; */
 `;
 
 export const LeftContainerFooter = styled.div`
-    margin-right: 6.4vw;
+    /* margin-right: 6.4vw; */
     display: flex;
 `;
 
@@ -101,8 +101,8 @@ export const FooterText = styled.p`
 export const VBar = styled.p`
     border: 1px solid #FFFFFF;
     width: 0;
-    height: 5.64vh;
-    margin-right: 6.4vw; 
+    /* height: 5.64vh; */
+    /* margin-right: 6.4vw;  */
 `
 
 export const TimerContainer = styled.div`

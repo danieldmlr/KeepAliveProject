@@ -22,5 +22,5 @@ export const Day = styled.p`
     text-align: center;
     width: 264px;
     margin-top: -20px;
-    margin-left: 100px;
+    margin-left: 40px;
 `;

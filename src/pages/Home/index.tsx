@@ -15,8 +15,10 @@ export default function HomePage() {
     const navigate = useNavigate();
     const [weather, setWeather] = useState({ city: '', country: '', temperature: 0 })
     useEffect(() => {
-        CurrentWeather().then((res) => {
-            setWeather({ city: res.name, country: res.sys.country, temperature: res.main.temp })
+        navigator.geolocation.getCurrentPosition(async function () {
+            CurrentWeather().then((res) => {
+                setWeather({ city: res.name, country: res.sys.country, temperature: res.main.temp })
+            })
         })
     }, [])
 
@@ -52,7 +54,7 @@ export default function HomePage() {
                 <TimerContainer>
                     <TimerText>Application refresh in</TimerText>
                     <div>
-                        <Countdown max={60} />
+                        <Countdown max={600} />
                         <Seconds>seconds</Seconds>
                     </div>
                 </TimerContainer>
