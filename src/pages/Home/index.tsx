@@ -5,7 +5,7 @@ import { WiDayCloudyGusts } from "react-icons/wi";
 import {
     ButtonContainer, City, FooterButtonContinue, FooterButtonLogout, FooterText, HomeFooter, HomeHeader, HomeSection, LeftContainerFooter, LogoContainer,
     MissionDescription, MissionSubText, MissionText, MissionTextSm, Seconds, Temperature, TimerContainer,
-    TimerText, SeparationBar, WeatherDisplay, WeatherDiv
+    TimerText, SeparationBar, WeatherDisplay, WeatherDiv, TimerAlign
 } from './styles';
 import logoHome from "../../assets/LogoCompasso-Home.png";
 import { useEffect, useState } from 'react';
@@ -53,10 +53,10 @@ export default function HomePage() {
                     <SeparationBar></SeparationBar>
                 <TimerContainer>
                     <TimerText>Application refresh in</TimerText>
-                    <div>
+                    <TimerAlign>
                         <Countdown max={600} />
                         <Seconds>seconds</Seconds>
-                    </div>
+                    </TimerAlign>
                 </TimerContainer>
                 <ButtonContainer>
                     <FooterButtonContinue type="button" onClick={() => window.open("//www.google.com", '_blank')}>Continuar Navegando</FooterButtonContinue>

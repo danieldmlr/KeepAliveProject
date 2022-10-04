@@ -6,7 +6,7 @@ export const ClockAlign = styled.div`
     flex-direction: column;
     align-items: center;
 
-    @media screen and (max-width: 426px) {
+    @media screen and (max-width: 426px), (max-height: 426px) {
         display: none;
     }
 `;

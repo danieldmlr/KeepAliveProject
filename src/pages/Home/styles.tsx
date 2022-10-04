@@ -23,8 +23,12 @@ export const HomeSection = styled.section`
         background-position: 0 82%;
     }
 
-    @media screen and (max-width: 769px) {
+    @media screen and (max-width: 769px), (max-height: 426px) {
         background-image: none;
+    }
+
+    @media screen and (max-width: 281px) , (max-height: 281px){
+        min-height: 460px;
     }
 `;
 
@@ -83,9 +87,13 @@ export const MissionDescription = styled.div`
     justify-content: center;
     padding-right: 7.03%;
 
-    @media screen and (max-width: 426px) {
+    @media screen and (max-width: 426px), (max-height: 426px) {
         padding-right: 0%;
         align-items: center;
+    }
+
+    @media screen and (max-width: 376px), (max-height: 376px) {
+        margin-bottom: 1.5%;
     }
 
     /* @media screen and (max-width: 281px) {
@@ -110,10 +118,21 @@ export const MissionText = styled.h2`
         
     }
 
+    @media screen and (max-width: 1024px) {
+        font-size: 2.25rem;
+        margin-top: 1.75%;
+    }
+
     @media screen and (max-width: 769px) {
         font-size: 2.25rem;
         margin-top: 1.75%;
         
+    }
+
+    @media screen and (max-width: 426px) , (max-height: 426px) {
+        font-size: 1.75rem;
+        text-align: center;
+        margin-top: 0.75%;
     }
 
     @media screen and (max-width: 426px) {
@@ -134,8 +153,12 @@ export const MissionTextSm = styled.h2`
     font-weight: 700;
     color: ${missionTextColor};
 
+    @media screen and (max-width: 426px) , (max-height: 426px){
+        font-size: 1.5rem;
+    }
+
     @media screen and (max-width: 426px) {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 
     @media screen and (max-width: 281px) {
@@ -148,7 +171,9 @@ export const MissionSubText = styled.p`
     font-size: 1.5rem;
     color: ${missionSubTextColor};
 
-    @media screen and (max-width: 426px) {
+    
+    
+    @media screen and (max-width: 426px) , (max-height: 426px) {
        text-align: center;
        font-size: 1.25rem;
     }
@@ -177,6 +202,10 @@ export const HomeFooter = styled.footer`
     @media screen and (max-width: 321px){
         height: 210px;   
     }
+
+    @media screen and (max-width: 281px){
+        height: 185px;  
+    }
 `;
 
 export const LeftContainerFooter = styled.div`
@@ -200,6 +229,12 @@ export const FooterText = styled.p`
         padding-left: 9%;
     }
 
+    @media screen and (max-width: 1024px){
+        width: 24%;
+        font-size: 0.875rem;
+        padding-left: 0;
+    }
+
     @media screen and (max-width: 769px){
         /* width: 66%; */
         width: 75%;
@@ -208,7 +243,12 @@ export const FooterText = styled.p`
         padding-left: 0;
     }
 
-    @media screen and (max-width: 426px){
+    @media screen and (max-width: 426px) , (max-height: 426px){
+        width: 28%;
+        text-align: center;
+    }
+
+    @media screen and (max-width: 426px) {
         /* width: 66%; */
         width: 93%;
         text-align: center;
@@ -224,6 +264,10 @@ export const FooterText = styled.p`
         /* width: 66%; */
         width: 76%;
     
+    }
+
+    @media screen and (max-width: 281px), (max-height: 281px) {
+        width: 88%;
     }
 `;
 
@@ -269,6 +313,10 @@ export const TimerContainer = styled.div`
         padding-right: 45%;
     }
     
+    @media screen and (max-width: 281px) , (max-height: 281px){
+        padding-right: 19%;
+    }
+
     @media screen and (max-width: 281px){
         padding-right: 50%;
     }
@@ -276,6 +324,7 @@ export const TimerContainer = styled.div`
 `;
 
 export const TimerText = styled.p`
+    display: flex;
     width: 45%;
     font-size: 0.875rem;
     text-align: end;
@@ -283,9 +332,8 @@ export const TimerText = styled.p`
     margin-left: 44%;
 
     @media screen and (max-width: 1025px) {
-     
-    width: 61%;
-    padding-right: 38.8%;
+        width: 61%;
+        padding-right: 38.8%;
    
     }
 
@@ -302,6 +350,10 @@ export const TimerText = styled.p`
         padding-right: 75%;
     }
 
+    @media screen and (max-width: 376px), (max-height: 376px){
+        width: 77%;
+    }
+
     @media screen and (max-width: 376px){
         width: 155%;
     }
@@ -309,12 +361,23 @@ export const TimerText = styled.p`
     @media screen and (max-width: 321px){
         width: 182%;
     }
+    
+    @media screen and (max-width: 281px), (max-height: 281px) {
+        width: 108%;
+    }
 
     @media screen and (max-width: 281px){
         width: 208%;
     }
-
   
+`;
+
+export const TimerAlign = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 97px;
 `;
 
 export const Seconds = styled.p`
