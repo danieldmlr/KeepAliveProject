@@ -5,7 +5,7 @@ import { WiDayCloudyGusts } from "react-icons/wi";
 import {
     ButtonContainer, City, FooterButtonContinue, FooterButtonLogout, FooterText, HomeFooter, HomeHeader, HomeSection, LeftContainerFooter, LogoContainer,
     MissionDescription, MissionSubText, MissionText, MissionTextSm, Seconds, Temperature, TimerContainer,
-    TimerText, VBar, WeatherDisplay, WeatherDiv
+    TimerText, SeparationBar, WeatherDisplay, WeatherDiv
 } from './styles';
 import logoHome from "../../assets/LogoCompasso-Home.png";
 import { useEffect, useState } from 'react';
@@ -50,7 +50,7 @@ export default function HomePage() {
             <HomeFooter>
                     <FooterText>Essa janela do navegador é usada para manter sua sessão de autenticação ativa.
                         Deixe-a aberta em segundo plano e abra uma nova janela para continuar a navegar.</FooterText>
-                    <VBar></VBar>
+                    <SeparationBar></SeparationBar>
                 <TimerContainer>
                     <TimerText>Application refresh in</TimerText>
                     <div>

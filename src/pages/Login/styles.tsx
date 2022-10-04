@@ -18,15 +18,16 @@ export const LoginSection = styled.section`
         height: 100%;
     } */
 
-    @media screen and (max-width: 768px){
+    @media screen and (max-width: 768px) , (max-height: 426px){
         min-height: 800px;
     }
+
 `;
 
 export const LoginContainer = styled.div`
     width: 50%;
     
-    @media screen and (max-width: 768px)  {
+    @media screen and (max-width: 768px), (max-height: 426px)  {
         width: 100%;
         
     }
@@ -40,7 +41,13 @@ export const SpacingContainer = styled.div`
         padding-top: 30%;
     }
 
-    @media screen and (max-width: 768px) and (orientation: portrait){
+    
+    @media screen and (max-width: 1023px) {
+        padding-top: 10%;
+        padding-left: 27%;
+    }
+
+    @media screen and (max-width: 768px) {
         padding-top: 10%;
         padding-left: 27%;
         /* border: 1px solid red; */
@@ -58,7 +65,7 @@ export const LogoMedia = styled.img`
 
     @media screen and (max-width: 768px){
         display: block;
-        margin-bottom: 25%;
+        margin-bottom: 10%;
     }
 
     @media screen and (max-width: 426px){
@@ -93,7 +100,15 @@ export const LoginText = styled.p`
     }
     
     @media screen and (max-width: 1024px){
-        width: 79%;
+        width: 79.3%;
+    }
+    
+    @media screen and (max-width: 901px) {
+        width: 80%;
+    }
+
+    @media screen and (max-width: 901px), (max-height: 769px) {
+        width: 86%;
     }
     
     @media screen and (max-width: 768px) and (orientation: portrait){
@@ -111,7 +126,7 @@ export const LoginText = styled.p`
     }
 
     @media screen and (max-width: 321px) {
-        width: 72%;
+        width: 75%;
         /* border: 1px solid red; */
     }
 
@@ -325,7 +340,7 @@ export const ImgContainer = styled.div`
         background-position: center;
     }
     
-    @media screen and (max-width: 768px) and (orientation: portrait){
+    @media screen and (max-width: 768px), (max-height: 426px) {
       display : none;
     }
 
