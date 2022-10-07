@@ -1,4 +1,4 @@
-import { Time, Day, ClockAlign } from "./styles";
+import { Time, Day, ClockContainer } from "./styles";
 import { useEffect, useState } from 'react';
 
 export default function Clock() {
@@ -10,18 +10,19 @@ export default function Clock() {
     }, []);
 
     return (
-        <ClockAlign>
+        <ClockContainer>
             <Time> {date.toLocaleString('pt-BR', {
                 hour: 'numeric',
                 minute: 'numeric',
-            })}</Time>
+            })}
+            </Time>
             <Day> {date.toLocaleDateString('pt-BR', {
                 weekday: 'long',
                 day: 'numeric',
                 month: 'long',
                 year: 'numeric',
             })}</Day>
-        </ClockAlign>
+        </ClockContainer>
     )
 }
 

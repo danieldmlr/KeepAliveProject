@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import { textColor } from './UI/variables';
+import { textColor } from './variables';
 export const GlobalStyles = createGlobalStyle`
 
     html, body, div, span, applet, object, iframe,

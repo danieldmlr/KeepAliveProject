@@ -51,7 +51,7 @@ export const StyledErrorMessage = styled.p`
         margin-bottom: -15%;
     }
 
-    @media screen and (max-width: 321px){
+    @media screen and (max-width: 281px){
         margin-bottom: -18%;
         font-size: 0.75rem;
     }

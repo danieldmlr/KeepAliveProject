@@ -192,7 +192,7 @@ export const HomeFooter = styled.footer`
     display: flex;
     justify-content: end;
     align-items: center;
-    height: 100px;
+    height: 9.275%;
 
     @media screen and (max-width: 769px){
         flex-direction: column-reverse;
