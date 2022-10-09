@@ -1,12 +1,6 @@
 import styled from "styled-components";
 import { borderColor, buttonColor, buttonTextColor, textColor } from "../../../components/UI/variables";
 
-
-interface ButtonProps {
-    focused: boolean
-}
-
-
 export const InputsContainer = styled.div`
     display: flex;
     flex-direction: column;
@@ -26,15 +20,15 @@ export const Label = styled.label`
     margin-bottom: 4.76%;
 `;
 
-export const EmailContainer = styled.div`
-    display: flex;
-    align-items: center;
-    margin-bottom: 4.91%;
+// export const EmailContainer = styled.div`
+//     display: flex;
+//     align-items: center;
+//     margin-bottom: 4.91%;
 
-    @media screen and (max-width: 321px) {
-        margin-bottom: 10%;
-    }
-`;
+//     @media screen and (max-width: 321px) {
+//         margin-bottom: 10%;
+//     }
+// `;
 
 export const Input = styled.input`
     width: 69.53%;
@@ -80,27 +74,28 @@ export const Input = styled.input`
     }
 `;
 
-export const PasswordContainer = styled.div`
+export const InputContainer = styled.div`
+    display: flex;
+    align-items: center;
+    margin-bottom: 4.91%;
+`;
+
+export const InputContainerPassword = styled.div`
     display: flex;
     align-items: center;
     
 `;
 
-export const IconContainer = styled.div<ButtonProps>`
+export const IconContainer = styled.div`
     margin-left: 2.5%;
-
-    transition: 0.3s transform;
-    ${(props) =>
-        props.focused ? "transform: translate(-250%)" : "transform: translate(0)"}
 `;
 
-export const ContinueButton = styled.button`
+export const RegisterButton = styled.button`
     width: 73.28%;
     height: 67px;
     padding: 0;
     margin-bottom: 4.91%;
     cursor: pointer;
-
     background: ${buttonColor};
     color: ${borderColor};
 
@@ -144,11 +139,11 @@ export const ContinueButton = styled.button`
 
 `;
 
-export const RegistrationGuide = styled.p`
+export const LoginGuide = styled.p`
     font-size: 1.25rem;
 `;
 
-export const RegistrationRedirectButton = styled.button`
+export const LoginRedirectButton = styled.button`
     border: none;
     text-decoration: none;
     padding: 0;

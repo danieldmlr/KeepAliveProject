@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { AiOutlineUser, AiOutlineLock } from "react-icons/ai";
 import ErrorMessage from '../../../components/ValidationError';
 import { errorColor } from '../../../components/UI/variables';
-import { InputsContainer, Label, EmailContainer, Input, IconContainer, PasswordContainer, ContinueButton } from './styles';
+import { InputsContainer, Label, EmailContainer, Input, IconContainer, PasswordContainer, ContinueButton, RegistrationGuide, RegistrationRedirectButton } from './styles';
 
 export default function Inputs() {
 
@@ -73,7 +73,10 @@ export default function Inputs() {
                 </PasswordContainer>
                 {error && <ErrorMessage />}
             </InputsContainer>
-            <ContinueButton onClick={handleSubmit}>Continuar</ContinueButton>
+            <div>
+                <ContinueButton onClick={handleSubmit}>Continuar</ContinueButton>
+                <RegistrationGuide>Ainda não possui um cadastro? Clique <RegistrationRedirectButton onClick={() =>  navigate("/register")}>aqui</RegistrationRedirectButton></RegistrationGuide>
+            </div>
         </>
     )
 
